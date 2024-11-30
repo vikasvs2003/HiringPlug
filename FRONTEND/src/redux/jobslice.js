@@ -30,7 +30,9 @@ const jobSlice = createSlice({
             state.allAppliedJobs=action.payload;
         },
         setSearchQuery:(state,action)=>{
+            // console.log("Updating Search Query in State 1 :", action.payload); 
             state.searchQuery=action.payload;
+            // console.log("Updating Search Query in State 2 :", action.payload); 
         }
     }
 

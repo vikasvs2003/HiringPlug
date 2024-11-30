@@ -15,9 +15,11 @@ function JobDescription() {
 
     const { user } = useSelector(store => store.auth)
     const { singleJob } = useSelector(store => store.job)
-    console.log('User:', user);
-    console.log('Single Job:', singleJob);
-    console.log('Applications applicant:', singleJob?.applications?.applicant);
+
+
+    // console.log('User:', user);
+    // console.log('Single Job:', singleJob);
+    // console.log('Applications applicant:', singleJob?.applications?.applicant);
 
 
     const isinitiallyapplied = singleJob?.applications?.some(application => String(application.applicant) === String(user?._id)) || false;
@@ -25,7 +27,7 @@ function JobDescription() {
 
     // const isApplied = false;
 
-    console.log('isApplied:', isApplied);
+    // console.log('isApplied:', isApplied);
 
     const params = useParams();
     const jobId = params.id;
@@ -34,14 +36,14 @@ function JobDescription() {
 
     const applyJobHandler = async () => {
         try {
-            console.log(jobId)
+            // console.log(jobId)
             const res = await axios.get(`${APPLICATION_API_END_POINT}/apply/${jobId}`, { withCredentials: true });
-            console.log('API Response hai bhai :', res.data);
+            // console.log('API Response hai bhai :', res.data);
             if (res.data.success) {
                 setIsApplied(true); //update the local state 
                 const updateSingleJob = {...singleJob,applications:[...singleJob.applications,{applicant:user?._id}]}
                 dispatch(setSingleJob(updateSingleJob));//helps us to real time UI update
-                toast.success("success", res.data.message);
+                toast.success("Job Applied Successfull !  ", res.data.message);
             }
 
         } catch (error) {

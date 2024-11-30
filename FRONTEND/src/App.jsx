@@ -1,11 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Navbar from './components/shared/Navbar'
 
-import Login from './components/auth/login'
-import Signup from './components/auth/signup'
+import Login from './components/auth/Login.jsx'
+import Signup from './components/auth/signup.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './components/Home'
 import Jobs from './components/Jobs'

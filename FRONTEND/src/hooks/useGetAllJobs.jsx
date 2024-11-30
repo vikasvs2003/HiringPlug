@@ -10,7 +10,7 @@ const useGetAllJobs = () => {
     // const {searchedQuery}=useSelector(store =>store.job);
     // console.log(searchedQuery);
     const { searchedQuery } = useSelector((store) => store.job);
-    console.log("Redux searchedQuery:", searchedQuery);
+    // console.log("Redux searchedQuery:", searchedQuery);
 
     const navigate = useNavigate()
     useEffect(() => {

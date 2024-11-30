@@ -346,16 +346,14 @@ const Signup = () => {
                         </div>
                     </div>
                     {
-                        loading ? <Button className="w-full my-4">
-                         <Loader2 className='mr-2 h-4 w-4 animate-spin' />
-                          Please wait </Button> : <Button type="submit" className="w-full my-4">Signup</Button>
+                        loading ? <Button className="w-full my-4"> <Loader2 className='mr-2 h-4 w-4 animate-spin bg-green-500' /> Please wait </Button> : <Button type="submit" className="w-full my-4 bg-green-500 hover:bg-green-700">Signup</Button>
                     }
-                    <Button
+                    {/* <Button
                         className="w-full my-4 bg-green-500"
                         type="submit"
                     >
                         Signup
-                    </Button>
+                    </Button> */}
                     <span className='text-sm'>Already have an account? <Link to="/login" className='text-blue-600'>Login</Link></span>
                 </form>
             </div>

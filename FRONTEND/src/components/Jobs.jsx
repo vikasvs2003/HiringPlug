@@ -4,27 +4,38 @@ import FilterCard from './FilterCard'
 import Job from './Job'
 import { useSelector } from 'react-redux'
 import { motion } from 'framer-motion'
+import Footer from './shared/Footer'
 
 // const jobsArray = [1, 2, 3, 4, 5, 6, 7, 8]
 
 function Jobs() {
-    const { allJobs, searchedQuery } = useSelector(store => store.job);
+    const { allJobs, searchQuery  } = useSelector(store => store.job);
     const [filterJobs, setFilterJobs] = useState(allJobs);
+    // console.log("searchQuery in Jobs component:", searchQuery); 
+// console.log("allJobs in Jobs component:", allJobs); 
+    // console.log("search query in job.jsx Jobs:", searchQuery); 
 
     useEffect(() => {
-        if (searchedQuery) {
+        if (searchQuery) {
             const filteredJobs = allJobs.filter((job) => {
-                return job.title.toLowerCase().includes(searchedQuery.toLowerCase()) ||
-                    job.description.toLowerCase().includes(searchedQuery.toLowerCase()) ||
-                    job.location.toLowerCase().includes(searchedQuery.toLowerCase())
+                return job.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    job.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    job.location?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    job.jobType?.toLowerCase().includes(searchQuery.toLowerCase()) 
+
 
             })
+            // console.log("Filtered Jobs:", filteredJobs);
+           
+            
             setFilterJobs(filteredJobs);
         } else {
+            
             setFilterJobs(allJobs)
         }
 
-    }, [allJobs, searchedQuery]);
+    }, [allJobs, searchQuery]);
+
     return (
         <div>
             <Navbar />
@@ -60,6 +71,7 @@ function Jobs() {
                     }
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

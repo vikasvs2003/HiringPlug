@@ -9,6 +9,7 @@ import AppliedJobTable from './AppliedJobTable'
 import UpdateProfileDialogue from './UpdateProfileDialogue'
 import { useSelector } from 'react-redux'
 import useGetAppliedJobs from '@/hooks/useGetAppliedJobs'
+import Footer from './shared/Footer'
 
 
 // const skills = ["html", "csss", "javascript", "shadcn/ui", "redux", "react"];
@@ -83,6 +84,7 @@ const Profile = () => {
                 <AppliedJobTable />
             </div>
             <UpdateProfileDialogue open={open} setOpen={setOpen} />
+            <Footer />
         </div>
     )
 }
