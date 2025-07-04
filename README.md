@@ -54,6 +54,22 @@ cd hiringplug-jobportal
 
 ```
 ### 2. Backend Setup
+```bash
 cd backend
 npm install
+```
+Create a .env file in /backend and add:
+```
+PORT=5000
+MONGO_URI=your_mongodb_url
+JWT_SECRET=your_jwt_secret
+CLOUDINARY_NAME=your_cloudinary_name
+CLOUDINARY_API_KEY=your_key
+CLOUDINARY_API_SECRET=your_secret
+```
+Then run:
+```
+npm run dev
 
+```
+### 3. Frontend Setup
