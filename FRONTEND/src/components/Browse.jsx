@@ -16,26 +16,31 @@ const Browse = () => {
       dispatch(setSearchQuery(""))
     }
   }, [])
-  return (
-    <div>
-
+   return (
+    <div className="bg-gray-50 min-h-screen">
       <Navbar />
-      <div className='max-w-7xl  mx-auto my-10 '>
-        <h1 className='font-bold text-xl my-10' >Search Result  ({allJobs.length}) </h1>
-        <div className='grid grid-cols-3 gap-4' >
-          {
-            allJobs.map((job) => {
-              return (
-                <Job key={job._id} job={job} />
-              )
-            })
-          }
 
-        </div>
-      </div>
+      <main className="max-w-7xl mx-auto px-4 py-12">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-8">
+          Search Results <span className="text-gray-500">({allJobs.length})</span>
+        </h1>
+
+        {allJobs.length === 0 ? (
+          <p className="text-center text-gray-500 text-lg">No jobs found. Try another keyword.</p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {allJobs.map((job) => (
+              <Job key={job._id} job={job} />
+            ))}
+          </div>
+        )}
+      </main>
+
       <Footer />
     </div>
-  )
+  );
+
+
 }
 
 export default Browse

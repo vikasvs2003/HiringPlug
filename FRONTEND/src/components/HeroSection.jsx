@@ -77,7 +77,7 @@ const HeroSection = () => {
         {/* RIGHT IMAGE SIDE */}
         <div className="w-full flex justify-center">
           <img
-            src="/assets/job-search-illustration.png"
+            src="/assets/jobsearch.png"
             alt="Job search illustration"
             className="w-[80%] max-w-md"
           />

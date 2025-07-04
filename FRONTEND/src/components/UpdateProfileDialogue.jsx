@@ -73,90 +73,68 @@ const UpdateProfileDialogue = ({ open, setOpen }) => {
     }
     return (
         <div>
-            <Dialog open={open}  >
-                <DialogContent className="bg-white   p-6 sm:max-w-[425px]" onInteractOutside = {() => setOpen(false)} >
-                    <DialogHeader>
-                        <DialogTitle> Update Profile  </DialogTitle>
-                    </DialogHeader>
-                    <form onSubmit={submitHandler} >
-                        <div className='grid gap-4 py-4' >
+            <Dialog open={open}>
+      <DialogContent
+        className="bg-white p-6 sm:max-w-[500px]"
+        onInteractOutside={() => setOpen(false)}
+      >
+        <DialogHeader>
+          <DialogTitle className="text-lg font-semibold">Update Profile</DialogTitle>
+        </DialogHeader>
 
-                            <div className='grid grid-cols-4 items-center gap-4' >
-                                <Label htmlfor="name" className="text-right"> Name</Label>
-                                <Input
-                                    id="fullname"
-                                    name="fullname"
-                                    type="text"
-                                    value={input.fullname}
-                                    onChange={changeEventHandler}
-                                    className="col-span-3" />
-                            </div>
-                            <div className='grid grid-cols-4 items-center gap-4' >
-                                <Label htmlfor="email" className="text-right"> email</Label>
-                                <Input
-                                    id="email "
-                                    name="email"
-                                    value={input.email}
-                                    type="email"
-                                    onChange={changeEventHandler}
-                                    className="col-span-3" />
-                            </div>
-                            <div className='grid grid-cols-4 items-center gap-4' >
-                                <Label htmlfor="phoneNumber" className="text-right"> phoneNumber</Label>
-                                <Input
-                                    id="phoneNumber "
-                                    name="phoneNumber"
-                                    value={input.phoneNumber}
-                                    onChange={changeEventHandler}
-                                    className="col-span-3" />
-                            </div>
-                            <div className='grid grid-cols-4 items-center gap-4' >
-                                <Label htmlfor="bio" className="text-right"> Bio</Label>
-                                <Input
-                                    id="bio "
-                                    name="bio"
-                                    value={input.bio}
-                                    onChange={changeEventHandler}
-                                    className="col-span-3" />
-                            </div>
-                            <div className='grid grid-cols-4 items-center gap-4' >
-                                <Label htmlfor="skills" className="text-right"> Skills</Label>
-                                <Input
-                                    id="skills "
-                                    name="skills"
-                                    value={input.skills}
-                                    onChange={changeEventHandler}
-                                    className="col-span-3" />
-                            </div>
-                            <div className='grid grid-cols-4 items-center gap-4' >
-                                <Label htmlfor="file" className="text-right"> Resume</Label>
-                                <Input
-                                    id="file"
-                                    name="file"
-                                    type="file"
-                                    onChange={fileChangeHandler}
-                                    accept="application/image"
-                                    
-                                    className="col-span-3" />
-                            </div>
-                            
-                        </div>
+        <form onSubmit={submitHandler}>
+          <div className="grid gap-4 py-4">
+            {[
+              { label: 'Name', id: 'fullname', type: 'text' },
+              { label: 'Email', id: 'email', type: 'email' },
+              { label: 'Phone Number', id: 'phoneNumber', type: 'text' },
+              { label: 'Bio', id: 'bio', type: 'text' },
+              { label: 'Skills (comma-separated)', id: 'skills', type: 'text' }
+            ].map(({ label, id, type }) => (
+              <div key={id} className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor={id} className="text-right">{label}</Label>
+                <Input
+                  id={id}
+                  name={id}
+                  type={type}
+                  value={input[id]}
+                  onChange={changeEventHandler}
+                  className="col-span-3"
+                />
+              </div>
+            ))}
 
-                        <DialogFooter>
-                        {
-                        loading ? <Button className="w-full my-4" > <Loader2 className="mr-2 h-4 w-4 animate-spin" />please wait  </Button> :
-                            <Button
-                                className="w-full my-4 bg-green-400 hover:bg-[gray-500]"
-                                type="submit"
-                            >
-                                Update
-                            </Button>
-                    }
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="file" className="text-right">Resume</Label>
+              <Input
+                id="file"
+                name="file"
+                type="file"
+                accept=".pdf,.doc,.docx,image/*"
+                onChange={fileChangeHandler}
+                className="col-span-3"
+              />
+            </div>
+          </div>
 
-                        </DialogFooter>
-                    </form>
-                </DialogContent>
-            </Dialog>
+          <DialogFooter>
+            {loading ? (
+              <Button className="w-full my-2" disabled>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Please wait...
+              </Button>
+            ) : (
+              <Button
+                className="w-full my-2 bg-green-600 hover:bg-green-700"
+                type="submit"
+              >
+                Update Profile
+              </Button>
+            )}
+          </DialogFooter>
+        </form>
+      </DialogContent>
+    </Dialog>
         </div>
     )
 }
