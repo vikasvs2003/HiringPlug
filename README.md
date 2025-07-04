@@ -73,3 +73,43 @@ npm run dev
 
 ```
 ### 3. Frontend Setup
+```bash
+cd ../client
+npm install
+npm run dev
+
+````
+Visit: http://localhost:5173 or http://localhost:3000
+### 4 .Folder Structure
+```bash
+hiringplug-jobportal/
+├── backend/
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   └── utils/
+├── client/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── redux/
+│   │   ├── pages/
+│   │   └── assets/
+
+```
+### 5. Acknowledgements
+Special thanks to:
+
+OpenAI & ChatGPT for support in design logic
+
+Shadcn UI & Tailwind for helping achieve a clean UX
+
+
+
+
+
+
+
+
+
+
+
