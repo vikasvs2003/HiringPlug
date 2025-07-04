@@ -39,108 +39,197 @@ const Navbar = () => {
         }
 
     }
+    // return (
+    //     <div className='bg-white'>
+    //         <div className='flex items-center justify-between mx-auto max-w-7xl h-16'>
+    //             <div>
+    //                 <h1 className='text-2xl font-bold'>
+    //                     Hiring <span className='text-[#F83002]'>Plug</span>
+    //                 </h1>
+    //             </div>
+
+    //             <div  >
+    //                 <ul className='flex font-medium items-center gap-5'>
+
+    //                     {
+    //                         user && user.role == 'recruiter' ? (
+    //                             <>
+    //                                 <li> <Link to="/admin/companies" > Companies</Link></li>
+    //                                 <li> <Link to="/admin/jobs" > Jobs</Link></li>
+
+    //                             </>
+    //                         ) : (
+    //                             <>
+
+    //                                 <li> <Link to="/" > Home</Link></li>
+    //                                 <li> <Link to="/Jobs" > Jobs</Link></li>
+    //                                 <li> <Link to="/browse" > Browse</Link></li>
+
+
+    //                             </>
+    //                         )
+    //                     }
+
+    //                     {
+    //                         !user ? (
+    //                             <div className='flex items-center gap-2'>
+
+    //                                 {/* <Link to="/jobs"> <Button className=" hover:bg-[#5b30a6] " > jobs</Button></Link> */}
+    //                                 <Link to="/Login"> <Button variant="outline " className=" rounded-sm hover:bg-[#5b30a6] "> login</Button></Link>
+    //                                 <Link to="/Signup"> <Button className="bg-[#6A38C2] hover:bg-[#5b30a6] " > signup</Button></Link>
+
+
+    //                             </div>
+    //                         ) : (
+
+    //                             <Popover >
+    //                                 <PopoverTrigger asChild>
+    //                                     <Avatar className="cursor-pointer" >
+    //                                         <AvatarImage className='w-9 h-9 rounded-full object-cover '
+    //                                             src={user?.profile?.profilePhoto}
+    //                                             alt="@shadcn"
+    //                                         />
+
+    //                                     </Avatar>
+    //                                 </PopoverTrigger>
+    //                                 <PopoverContent className='w-80 bg-white  '>
+    //                                     <div>
+
+    //                                         <div className='flex gap-2 space-y-2'>
+    //                                             <Avatar className="cursor-pointer" >
+    //                                                 <AvatarImage className='w-9 h-9 rounded-full object-cover '
+    //                                                     src={user?.profile?.profilePhoto}
+    //                                                     alt="@shadcn"
+    //                                                 />
+    //                                             </Avatar>
+    //                                             <div>
+    //                                                 <h4 className='font-medium text-lg text-gray-800 '  >{user?.fullname}</h4>
+    //                                                 <p className='text-sm text-gray-500'> {user?.profile?.bio}</p>
+    //                                             </div>
+    //                                         </div>
+
+    //                                         <div className='flex flex-col my-2 text-gray-600'>
+
+
+    //                                             {
+    //                                                 user && user.role == 'student' && (
+    //                                                     <div className='flex w-fit items-center gap-2 cursor-pointer'>
+    //                                                         <User2 />
+    //                                                         <Button variant="link"> <Link to="/profile" > view profile </Link> </Button>
+    //                                                     </div>
+
+    //                                                 )
+
+    //                                             }
+
+    //                                             <div className='flex w-fit items-center gap-2 cursor-pointer'>
+    //                                                 <LogOut />
+    //                                                 <Button onClick={logoutHandler} variant="link">logout</Button>
+    //                                             </div>
+
+    //                                         </div>
+    //                                     </div>
+
+    //                                 </PopoverContent>
+    //                             </Popover>
+
+    //                         )
+    //                     }
+
+    //                 </ul>
+    //             </div>
+    //         </div>
+    //     </div>
+    // );
+
+
+
     return (
-        <div className='bg-white'>
-            <div className='flex items-center justify-between mx-auto max-w-7xl h-16'>
-                <div>
-                    <h1 className='text-2xl font-bold'>
-                        Hiring <span className='text-[#F83002]'>Plug</span>
-                    </h1>
-                </div>
+    <nav className="bg-white shadow-sm py-4 px-6">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* Logo */}
+        <Link to="/" className="text-xl font-bold text-gray-900">
+          Hiring<span className="text-[#0077B6]">Plug</span>
+        </Link>
 
-                <div  >
-                    <ul className='flex font-medium items-center gap-5'>
+        {/* Links */}
+        <div className="flex items-center gap-6">
+          <ul className="hidden sm:flex gap-6 text-gray-700 font-medium">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/Jobs">Jobs</Link>
+            </li>
+            <li>
+              <Link to="/browse">Browse</Link>
+            </li>
+          </ul>
 
-                        {
-                            user && user.role == 'recruiter' ? (
-                                <>
-                                    <li> <Link to="/admin/companies" > Companies</Link></li>
-                                    <li> <Link to="/admin/jobs" > Jobs</Link></li>
-
-                                </>
-                            ) : (
-                                <>
-
-                                    <li> <Link to="/" > Home</Link></li>
-                                    <li> <Link to="/Jobs" > Jobs</Link></li>
-                                    <li> <Link to="/browse" > Browse</Link></li>
-
-
-                                </>
-                            )
-                        }
-
-                        {
-                            !user ? (
-                                <div className='flex items-center gap-2'>
-
-                                    {/* <Link to="/jobs"> <Button className=" hover:bg-[#5b30a6] " > jobs</Button></Link> */}
-                                    <Link to="/Login"> <Button variant="outline " className=" rounded-sm hover:bg-[#5b30a6] "> login</Button></Link>
-                                    <Link to="/Signup"> <Button className="bg-[#6A38C2] hover:bg-[#5b30a6] " > signup</Button></Link>
-
-
-                                </div>
-                            ) : (
-
-                                <Popover >
-                                    <PopoverTrigger asChild>
-                                        <Avatar className="cursor-pointer" >
-                                            <AvatarImage className='w-9 h-9 rounded-full object-cover '
-                                                src={user?.profile?.profilePhoto}
-                                                alt="@shadcn"
-                                            />
-
-                                        </Avatar>
-                                    </PopoverTrigger>
-                                    <PopoverContent className='w-80 bg-white  '>
-                                        <div>
-
-                                            <div className='flex gap-2 space-y-2'>
-                                                <Avatar className="cursor-pointer" >
-                                                    <AvatarImage className='w-9 h-9 rounded-full object-cover '
-                                                        src={user?.profile?.profilePhoto}
-                                                        alt="@shadcn"
-                                                    />
-                                                </Avatar>
-                                                <div>
-                                                    <h4 className='font-medium text-lg text-gray-800 '  >{user?.fullname}</h4>
-                                                    <p className='text-sm text-gray-500'> {user?.profile?.bio}</p>
-                                                </div>
-                                            </div>
-
-                                            <div className='flex flex-col my-2 text-gray-600'>
-
-
-                                                {
-                                                    user && user.role == 'student' && (
-                                                        <div className='flex w-fit items-center gap-2 cursor-pointer'>
-                                                            <User2 />
-                                                            <Button variant="link"> <Link to="/profile" > view profile </Link> </Button>
-                                                        </div>
-
-                                                    )
-
-                                                }
-
-                                                <div className='flex w-fit items-center gap-2 cursor-pointer'>
-                                                    <LogOut />
-                                                    <Button onClick={logoutHandler} variant="link">logout</Button>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </PopoverContent>
-                                </Popover>
-
-                            )
-                        }
-
-                    </ul>
-                </div>
+          {!user ? (
+            <div className="flex gap-2">
+              <Link to="/Login">
+                <Button variant="outline" className="rounded-md">
+                  Login
+                </Button>
+              </Link>
+              <Link to="/Signup">
+                <Button className="bg-[#0077B6] hover:bg-[#023e8a] text-white rounded-md">
+                  Sign Up
+                </Button>
+              </Link>
             </div>
+          ) : (
+            <Popover>
+              <PopoverTrigger asChild>
+                <Avatar className="cursor-pointer">
+                  <AvatarImage
+                    className="w-9 h-9 rounded-full object-cover"
+                    src={user?.profile?.profilePhoto || 'https://github.com/shadcn.png'}
+                    alt={user?.fullname || '@user'}
+                  />
+                </Avatar>
+              </PopoverTrigger>
+              <PopoverContent className="w-72 bg-white shadow-lg rounded-md p-4">
+                <div className="flex gap-3 items-center mb-4">
+                  <Avatar>
+                    <AvatarImage
+                      className="w-10 h-10 rounded-full object-cover"
+                      src={user?.profile?.profilePhoto || 'https://github.com/shadcn.png'}
+                      alt={user?.fullname || '@user'}
+                    />
+                  </Avatar>
+                  <div>
+                    <h4 className="font-semibold text-gray-800">{user?.fullname}</h4>
+                    <p className="text-sm text-gray-500">{user?.profile?.bio || 'Job seeker'}</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2 text-gray-600">
+                  {user?.role === 'student' && (
+                    <Link to="/profile" className="flex items-center gap-2 hover:text-gray-900">
+                      <User2 size={18} /> View Profile
+                    </Link>
+                  )}
+
+                  <button
+                    onClick={logoutHandler}
+                    className="flex items-center gap-2 text-red-600 hover:text-red-800"
+                  >
+                    <LogOut size={18} /> Logout
+                  </button>
+                </div>
+              </PopoverContent>
+            </Popover>
+          )}
         </div>
-    );
+      </div>
+    </nav>
+  );
+
+
+
+
 };
 
 export default Navbar;
