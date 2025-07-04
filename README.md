@@ -51,3 +51,9 @@ HiringPlug is a full-stack job portal built with a modern, clean UI and real-tim
 ```bash
 git clone https://github.com/your-username/hiringplug-jobportal.git
 cd hiringplug-jobportal
+
+```
+### 2. Backend Setup
+cd backend
+npm install
+
