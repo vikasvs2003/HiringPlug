@@ -9,6 +9,14 @@ HiringPlug is a full-stack job portal built with a modern, clean UI and real-tim
 [🔗 View Live Website ](https://hiringplug.onrender.com/)
 
 ---
+## 📸 Screenshots
+
+### 🏠 Hero Section
+![Hero](./FRONTEND/screenshots/hero.png)
+
+
+### 👤 User Profile
+![Profile](./FRONTEND/screenshots/profile.png)
 
 ---
 
