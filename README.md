@@ -12,7 +12,7 @@ HiringPlug is a full-stack job portal built with a modern, clean UI and real-tim
 ## 📸 Screenshots
 
 ### 🏠 Hero Section
-![Hero](./FRONTEND/screenshots/hero.png)
+![Home](./FRONTEND/screenshots/home.png)
 
 
 ### 👤 User Profile
