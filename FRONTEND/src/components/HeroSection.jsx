@@ -4,6 +4,7 @@ import { Search } from 'lucide-react';
 import { useDispatch } from 'react-redux';
 import { setSearchQuery } from '@/redux/jobslice';
 import { useNavigate } from 'react-router-dom';
+import jobSearchImage from '@/assets/jobsearch.png';
 
 const HeroSection = () => {
 
@@ -16,28 +17,7 @@ const HeroSection = () => {
         navigate("/browse")
 
     }
-    // return (
-    //     <div className='text-center' >
-    //         <div className='flex flex-col gap-5 my-10'>
-    //             <span className=' mx-auto px-4 py-2 rounded-full bg-gray-100 text-[#F83002] font-medium' >No 1 job hunt website</span>
-    //             <h1 className='text-5xl font-bold' > Search,Apply &  <br /> Get Your <span className='text-[#6A38C2]' > Dream Jobs</span> </h1>
-    //             <p>"Whether you're a fresh graduate or an experienced professional, we help you connect with top companies to land your dream role." <br /> <b> <i> "Start your journey today!" </i> </b></p>
-    //             <div className='flex w-[40%] shadow-lg border-gray-200 pl-3 rounded-full items-center gap-4 mx-auto' >
-    //                 <input 
-    //                 type="text"  
-    //                 placeholder='find your dream job'
-    //                 onChange={(e)=>setQuery(e.target.value)}
-    //                 className='outline-none border-none  w-full'
-    //                 />
-    //                 <Button  onClick={searchJobHandler} className="rounded-r-full bg-[#6A38C2]  " >
-    //                     <Search className='h-5 w-5 ' />
-    //                 </Button>
-    //             </div>
-
-    //         </div>
-    //     </div>
-    // )
-
+    
 
  return (
     <section className="bg-[#f0f9ff] py-16 px-6 md:px-20">
@@ -77,7 +57,7 @@ const HeroSection = () => {
         {/* RIGHT IMAGE SIDE */}
         <div className="w-full flex justify-center">
           <img
-            src="/assets/jobsearch.png"
+             src={jobSearchImage}
             alt="Job search illustration"
             className="w-[80%] max-w-md"
           />
